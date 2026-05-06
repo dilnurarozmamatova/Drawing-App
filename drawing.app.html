@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Drawing App</h2>
+<canvas id="c" width="400" height="300" style="border:1px solid"></canvas>
+
+<script>
+let ctx = c.getContext("2d");
+let drawing=false;
+
+c.onmousedown=()=>drawing=true;
+c.onmouseup=()=>drawing=false;
+
+c.onmousemove=(e)=>{
+  if(!drawing) return;
+  ctx.fillRect(e.offsetX,e.offsetY,3,3);
+};
+</script>
+
+</body>
+</html>
